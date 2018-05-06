@@ -1,0 +1,534 @@
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Кабинет работодателя</title>
+    <meta name="description" content="">
+    <link rel="icon" href="https://bsu.by/imgbsu/favicon.ico" type="image/x-icon">
+    <meta name="keywords" content="">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="css/floating-labels.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="js/form.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/chosen.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/bootstrap-datetimepicker.css">
+    <link rel="stylesheet" href="css/form-signing/form-signin.css">
+
+</head>
+<body>
+
+<header class="container-fluid">
+    <div class="row">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="/">
+                <img src="https://cv.bsu.by/project/templates/_ares/images/logo_bsu.png">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarToggler">
+
+                <ul class="navbar-nav mr-auto ml-auto">
+
+                    <li class="nav-item"><a href="https://cv.bsu.by/index"  class="nav-link">Главная</a></li>
+
+                    <li class="nav-item"><a href="https://cv.bsu.by/catalog"  class="nav-link">Резюме</a></li>
+
+                    <li class="nav-item"><a href="https://cv.bsu.by/vakansii"  class="nav-link">Вакансии</a></li>
+
+                    <li class="nav-item"><a href="https://cv.bsu.by/download"  class="nav-link">Документы</a></li>
+
+                    <li class="nav-item"><a href="https://cv.bsu.by/contacts"  class="nav-link">Контакты</a></li>
+
+                </ul>
+
+                <div class="btn-group language mr-1 ml-1">
+                    <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span>ru</span>
+                    </button>
+                    <div class="dropdown-menu">
+
+                        <a href="https://cv.bsu.by/" class="dropdown-item"><img src="/project/templates/_ares/images/flag/flat/24/ru.png">Русский</a>
+
+                        <a href="https://cv.bsu.by/en/" class="dropdown-item"><img src="/project/templates/_ares/images/flag/flat/24/en.png">English</a>
+
+                    </div>
+                </div>
+
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signup">
+                    Войти
+                </button>
+                <div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="signupLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Вход в личный кабинет</h5>
+                                <button type="button" class="btn close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+
+                            </div>
+                            <div class="modal-body">
+                                <form id="authform" method="POST" action="https://cv.bsu.by/user/~login">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="login">Логин</label>
+                                        <input type="text" class="form-control" id="login" name="login" placeholder="Ваш логин">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="pass">Пароль</label>
+                                        <input type="password" class="form-control" id="password" name="password" placeholder="Ваш пароль">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <a style="margin-right:auto" href="/user/~registration"><i class="fa fa-fw fa-user"></i>Зарегистрироваться</a>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                                <button type="submit" form="authform" class="btn btn-primary">Войти</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+    </div>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="path">
+
+                <nav class="breadcrumbs visible-sm-block visible-md-block visible-lg-block">
+                    <ul>
+
+                        <li><a href="https://cv.bsu.by/">Главная</a></li>
+
+                        <li>Работодателю</li>
+
+                    </ul>
+                </nav>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
+</script>
+
+<form class="form-signin">
+    <form class="needs-validation " novalidate>
+        <div class = "step1 ">
+
+            <div class="topStepBlock">
+                <div class="circle circle1">1</div>
+                <div class="circle circle2">2</div>
+                <div class="circle circle3">3</div>
+                <div class="line"></div>
+            </div>
+
+            <div class="form-label-group stepText">
+                Шаг 1
+            </div>
+
+            <div class="form-label-group">
+                <input type="text" id="inputCompanyName" class="form-control" placeholder="Email address"  autofocus>
+                <label for="inputCompanyName">Название компании</label>
+            </div>
+
+            <div class="form-label-group">
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email" >
+                <label for="inputEmail">Email</label>
+            </div>
+
+            <div class="form-label-group">
+                <input type="url" id="inputCompanyUrl" class="form-control" placeholder="Password" >
+                <label for="inputCompanyUrl">Веб-сайт</label>
+            </div>
+
+            <div class="form-label-group">
+                <input type="text" id="inputAddress" class="form-control" placeholder="Password" >
+                <label for="inputAddress">Адрес</label>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block step1to2" >Следующий шаг</button>
+        </div>
+    </form>
+
+    <div class = "step2">
+
+        <div class="topStepBlock">
+            <div class="circle circle1">1</div>
+            <div class="circle circle2">2</div>
+            <div class="circle circle3">3</div>
+            <div class="line"></div>
+        </div>
+
+        <div class="form-label-group stepText">
+            Шаг 2
+        </div>
+
+        <div class="form-label-group">
+            <input type="text" id="inputLastName" class="form-control" placeholder="Password" required>
+            <label for="inputLastName">Фамилия</label>
+        </div>
+
+        <div class="form-label-group">
+            <input type="text" id="inputFirstName" class="form-control" placeholder="Password" required>
+            <label for="inputFirstName">Имя</label>
+        </div>
+
+        <div class="form-label-group">
+            <input type="text" id="inputPatronymic" class="form-control" placeholder="Password" required>
+            <label for="inputPatronymic">Отчество</label>
+        </div>
+
+        <div class="form-label-group">
+            <input type="text" id="inputPhone" class="form-control" placeholder="Password" required>
+            <label for="inputPhone">Телефон</label>
+        </div>
+        <div class="d-flex justify-content-between">
+            <button class="btn btn-lg btn-primary  step2to1 " style="width: 40%">preStep</button>
+            <button class="btn btn-lg btn-primary  step2to3" style="width: 40%">Следующий шаг</button>
+        </div>
+    </div>
+
+    <div class = "step3">
+
+        <div class="topStepBlock">
+            <div class="circle circle1">1</div>
+            <div class="circle circle2">2</div>
+            <div class="circle circle3">3</div>
+            <div class="line"></div>
+        </div>
+
+        <div class="form-label-group stepText">
+            Шаг 3
+        </div>
+
+        <div class="form-label-group">
+            <input type="text" id="inputLogin" class="form-control" placeholder="Password" required>
+            <label for="inputLogin">Логин</label>
+        </div>
+
+        <div class="form-label-group">
+            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+            <label for="inputPassword">Пароль</label>
+        </div>
+
+        <div class="form-label-group">
+            <input type="password" id="inputRePassword" class="form-control" placeholder="Password" required>
+            <label for="inputRePassword">Повторите пароль</label>
+        </div>
+        <div class="d-flex justify-content-between">
+            <button class="btn btn-lg btn-primary btn-block step3to2" >preStep</button>
+            <button class="btn btn-lg btn-primary btn-block submit" type="submit">Зарегистрироваться</button>
+        </div>
+    </div>
+
+
+</form>
+<style type="text/css">
+    /*.step1{
+        display: none;
+    }*/
+
+    /* .circle1{
+         background: #606060;
+     }*/
+
+    .step2{
+        display: none;
+    }
+    .step3{
+        display: none;
+    }
+</style>
+<script type="text/javascript">
+    $(function() {
+        var circleColorActive = '#606060';
+        var circleColorDeActive = '#fff';
+        var $step1 = $('.step1');
+        var $step2 = $('.step2');
+        var $step3 = $('.step3');
+
+        $('.circle1').css({'background': circleColorActive});
+
+        $(".step1to2").click(function(e) {
+            $step1.hide();
+            $('.circle2').css({'background': circleColorActive});
+            $step2.fadeIn(1000);
+        });
+        $(".step2to3").click(function(e) {
+            $step2.hide();
+            $('.circle3').css({'background': circleColorActive});
+            $step3.fadeIn(1000);
+        });
+        $(".step2to1").click(function(e) {
+            $step2.hide();
+            $step3.hide();
+            $('.circle2').css({'background': circleColorDeActive});
+            $step1.fadeIn(1000);
+        });
+        $(".step3to2").click(function() {
+            $step3.hide();
+            $step1.hide();
+            $('.circle3').css({'background': circleColorDeActive});
+            $step2.fadeIn(1000);
+        });
+    });
+</script>
+
+
+<footer class="container-fluid">
+    <div class="row">
+        <div class="container">
+            <div class="row">
+                <div class="col footermenu">
+                    <!--button type="button" class="return-on-top">
+                        <i class="return-on-top-icon"></i>
+                    </button-->
+
+                    <ul class="list-inline">
+
+                        <li class="nav-link menu-item"><a href="https://cv.bsu.by/index">Главная</a></li>
+
+                        <li class="nav-link menu-item"><a href="https://cv.bsu.by/catalog">Резюме</a></li>
+
+                        <li class="nav-link menu-item"><a href="https://cv.bsu.by/vakansii">Вакансии</a></li>
+
+                        <li class="nav-link menu-item"><a href="https://cv.bsu.by/download">Документы</a></li>
+
+                        <li class="nav-link menu-item"><a href="https://cv.bsu.by/contacts">Контакты</a></li>
+
+                    </ul>
+
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <section class="col-sm-12 col-md-4">
+
+                    <h3>ЭЛЕКТРОННЫЙ КАТАЛОГ РЕЗЮМЕ ВЫПУСКНИКОВ </h3>
+                    <div class="text-wrapper">
+                        <p>Проект электронного каталога резюме выпускников разработан при участии управления кадров, центра информационных технологий, факультета радиофизики и компьютерных технологий БГУ и компании Abiatec.</p>
+
+                        <p><strong>ВНИМАНИЕ!</strong> Электронный каталог резюме выпускников является собственностью Белорусского государственного университета. Запрещено использование и копирование информации о выпускниках БГУ на сторонние сайты и сервисы.</p>
+
+                    </div>
+
+                </section>
+                <section class="col-sm-12 col-md-4">
+                    <address>
+
+                        <h3>ОТДЕЛ КАДРОВ БГУ </h3>
+                        <div class="text-wrapper">
+                            <p><strong>тел.:</strong> (017) 209-59-75<br />
+                                <strong>email:</strong> Dobrovolskaya@bsu.by<br />
+                                <strong>адрес:</strong> 220030, г.Минск, ул.Бобруйская, 7, к.101</p>
+                        </div>
+
+                        <h3>БЕЛОРУССКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ </h3>
+                        <div class="text-wrapper">
+                            <p><strong>тел.:</strong> <span itemprop="tel">(017) 209-50-44</span><br />
+                                <strong>web:</strong> www.bsu.by<br />
+                                <strong>адрес:</strong> 220030, г.Минск, пр.Независимости, 4</p>
+                        </div>
+
+                        <h3>АДМИНИСТРАТОР САЙТА </h3>
+                        <div class="text-wrapper">
+                            <p><strong>email:</strong> rfenews@yandex.ru</p>
+                        </div>
+
+                    </address>
+                </section>
+                <section class="col-sm-12 col-md-4">
+
+                </section>
+            </div>
+        </div>
+    </div>
+    <div class="row rights">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    Copyright © BSU. All Rights Reserved
+                </div>
+                <div class="col" style="text-align: right">
+                    Разработано на <a href="http://x3m.by">X4.CMS</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://cv.bsu.by/project/templates/_ares/moment/moment.js"></script>
+<script src="https://cv.bsu.by/project/templates/_ares/js/jquery-3.2.1.min.js"></script>
+<script src="https://cv.bsu.by/project/templates/_ares/js/popper.min.js"></script>
+<script src="https://cv.bsu.by/project/templates/_ares/js/bootstrap.min.js"></script>
+<script src="https://cv.bsu.by/project/templates/_ares/js/bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+
+<script type="text/javascript" src="https://cv.bsu.by/x4/inc/ext/xoad/js/xoad_optimized.js"></script>
+
+<script type="text/javascript" src="/x4/front-base/core-js/accounting.js" ></script>
+<script type="text/javascript" src="/x4/front-base/core-js/handlebars-v13.js" ></script>
+<script type="text/javascript" src="/x4/front-base/core-js/mootools-core-151.js" ></script>
+<script type="text/javascript" src="/x4/front-base/core-js/purl.js" ></script>
+<script type="text/javascript" src="/x4/front-base/core-js/x4.js" ></script>
+
+<script type="text/javascript" language="javascript">
+
+    var xConnector = {"result":null,"lct":null,"message":null,"error":null,"__meta":{"result":"null","lct":"null","message":"null","error":"null"},"__size":4,"__class":"connector","__url":"\/_run.php","__uid":"ccff2f6400907724d507cf1687b8ba47","__output":null,"__timeout":null,"xroute":function(){return xoad.call(this,"xroute",arguments)}}
+    var x4 = null;
+    var enableJsonDebugging="";
+    document.addEventListener("DOMContentLoaded", function(event)
+    {
+
+        x4= new x4Base();
+
+    },false);
+</script>
+
+<script type="text/javascript" src="https://cv.bsu.by/project/plugins/extend.mailchimp/js/mailchimpFront.js"></script>
+<script src="https://cv.bsu.by/project/templates/_ares/js/auth.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
+
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+
+        $('ul.card-user-skills').each(function(){
+            if ($(this).children().length-4 <= 0) {
+                $(this).find('.card-user-skill--is-additional').addClass('hidden');
+            } else {
+
+                $(this).find('.card-user-skill--is-additional').append($(this).children().length-4);
+
+            }
+        });
+
+        $('.input-group .datepicker-input').datepicker( {
+            changeYear: true,
+            showOn: 'both',
+            buttonText: '',
+            closeText: 'ok',
+            changeMonth: false,
+            stepMonths: 12,
+            showButtonPanel: true,
+            dateFormat: 'yy',
+            onClose: function(dateText, inst) {
+                $(this).datepicker('setDate', new Date(inst.selectedYear, 1));
+            }
+        });
+
+    });
+
+</script>
+<script src="https://cv.bsu.by/project/templates/_ares/js/chosen.jquery.js"></script>
+<script src="https://cv.bsu.by/project/templates/_ares/js/dropzone.js"></script>
+<script src="/x4/adm/xjs/_components/jq.chosen/chosen.js"></script>
+
+<script>
+    moduleRegister.pushModule('fusers');
+
+    var fusersFront = new Class({
+
+        Extends: x4FrontModule,
+        preventJquery: false,
+        constructor: function () {
+            this.parent('fusers');
+        },
+        jqueryRun: function () {
+        }
+    });
+
+    $('.chosen-select').chosen();
+
+    $(document).ready(function () {
+        var fusers = x4.getModule('fusersFront');
+
+        $(document).on('click', '.save', function () {
+            var serialized = $('#edit_CATOBJ').serialize();
+
+            fusers.execute({saveSummary: serialized});
+        });
+
+        console.log($(".dropzone-input"));
+        $(".dropzone-input").each(function (index, input) {
+            var $input = $(input);
+            console.log($input);
+            $input.dropzone({
+                url: "/upload.php",
+                paramName: $input.attr('name'),
+            });
+        });
+    });
+</script>
+<script src="https://cv.bsu.by/project/templates/_ares/js/magnific-popup/jquery.magnific-popup.min.js" type="text/javascript"></script>
+<script src="https://cv.bsu.by/project/templates/_ares/js/custom.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-75740449-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-75740449-1');
+</script>
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
+</script>
+</body>
+</html>
+<script>(function (c) {if (c && c.groupCollapsed) {
+    c.log("%c%cgeneral%c %cINFO%c /dealer/~registration Generation time:0.047041177749634", "font-weight: normal", "font-weight: bold", "font-weight: normal", "background-color: blue; color: white; border-radius: 3px; padding: 0 2px 0 2px", "font-weight: normal");
+    c.log("%c%cgeneral%c %cINFO%c Cache size:79.78kB Cache items read size:11 Cache write size:0B Memory consumed:2MB", "font-weight: normal", "font-weight: bold", "font-weight: normal", "background-color: blue; color: white; border-radius: 3px; padding: 0 2px 0 2px", "font-weight: normal");
+}})(console);</script>
